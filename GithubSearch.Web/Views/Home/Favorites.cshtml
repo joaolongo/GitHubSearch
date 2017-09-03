@@ -1,0 +1,80 @@
+﻿@model IEnumerable<GithubSearch.Web.Models.GitHubViewModel>
+
+@{
+    ViewBag.Title = "Favorites";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Favoritos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenIssuesCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultBranch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubscribersCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Homepage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            Ações
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modeItem => item.OpenIssuesCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.DefaultBranch)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.SubscribersCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Homepage)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Language)
+            </td>
+            <td class="col-md-2 right">
+                <div class="btn-group">
+                    <a class="btn btn-default" href="/Home/Details/@item.Id">Detalhes</a>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="btn btn-default" href="/Home/Favorite/@item.Id?fromFavorites=true">Remover dos Favoritos</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

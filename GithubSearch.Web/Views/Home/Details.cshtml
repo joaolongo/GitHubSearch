@@ -1,0 +1,210 @@
+﻿@model GithubSearch.Web.Models.GitHubViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>GitHubViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenIssuesCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenIssuesCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasWiki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasWiki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowRebaseMerge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowRebaseMerge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowSquashMerge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowSquashMerge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowMergeCommit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowMergeCommit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultBranch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultBranch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StargazersCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StargazersCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscribersCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubscribersCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HtmlUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HtmlUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CloneUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CloneUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SshUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SshUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Homepage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Homepage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Private)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Private)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button onclick="history.back();return false;" class="btn btn-default">Voltar</button>
+</p>

@@ -1,0 +1,103 @@
+﻿@model IEnumerable<GithubSearch.Web.Models.GitHubViewModel>
+
+@{
+    ViewBag.Title = "Trending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var favorites = (List<long>)ViewBag.Favorites;
+}
+
+<h2>Trending</h2>
+
+<hr />
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-group col-lg-12">
+        <div class="input-group">
+            <input placeholder="Pesquisar..." class="form-control pull-right" type="text" id="text" name="text" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search" />
+                </button>
+            </span>
+        </div>
+    </div>
+}
+
+<hr/>
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>
+            Favorito?
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenIssuesCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultBranch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubscribersCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Homepage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            Ações
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center; vertical-align: middle">
+                <a href="/Home/Favorite/@item.Id" style="color: black">
+                    @{
+                        if (favorites.Any(x => x == item.Id))
+                        {
+                            <span style="color:gold" class="glyphicon glyphicon-star" />
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-star" />
+                        }
+
+                    }
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.OpenIssuesCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.DefaultBranch)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.SubscribersCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Homepage)
+            </td>
+            <td>
+                @Html.DisplayFor(modeItem => item.Language)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+                        }
+</table>
